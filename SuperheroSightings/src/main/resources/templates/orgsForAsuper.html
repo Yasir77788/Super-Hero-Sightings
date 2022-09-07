@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Orgs for a super</title>
+</head>
+<body>
+<!-- Main Body of Page -->
+<div class="container">
+    <div class="row m-4">
+        <div class="col text-center border border-dark">
+            <h1><a href="/" class="text-dark">Super Hero/Villain Sightings</a></h1>
+        </div>
+    </div>
+    <div class="row m-4 border border-dark">
+
+        <div class="col text-center m-3">
+            <a href="home" class="btn btn-outline-primary btn-lg"><FONT COLOR=green>Home</font></a>
+
+        </div>
+        <div class="col text-center m-3">
+            <a href="supers" class="btn btn-outline-primary btn-lg"><FONT COLOR=orange>Super Characters</font></a>
+        </div>
+        <div class="col text-center m-3">
+            <a href="organizations" class="btn btn-outline-primary btn-lg"><FONT COLOR=black>Organizations</font></a>
+        </div>
+        <div class="col text-center m-3">
+            <a href="sightings" class="btn btn-outline-primary btn-lg"><FONT COLOR=red>Sightings</font></a>
+        </div>
+        <div class="col text-center m-3">
+            <a href="locations" class="btn btn-outline-primary btn-lg">Locations</a>
+        </div>
+    </div>
+    <!-- Form -->
+
+    <!-- -->
+
+
+    <div class="container">
+        <div class="row m-4 border border-dark">
+            <div class="col text-center m-3">
+                <a href="getSuperId" class="btn btn-outline-primary btn-lg">Orgs found for a Super Character provided:</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -->
+
+    <div class="row m-4 border border-dark">
+        <div class="col text-center m-3">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Org Name</th>
+                    <th>Org Description</th>
+                    <th>Hero Or Villain Org</th>
+                    <th>Org Phone</th>
+                    <th>Org Email</th>
+                    <th>Org Location City</th>
+                    <th>Org Location State</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="o : ${orgs}">
+                    <td th:text="${o.orgId}">ID</td>
+                    <td th:text='${o.orgName}'>Name </td>
+                    <td th:text="${o.orgDescription}">Description</td>
+                    <td th:text="${o.heroOrVillainOrg}">Class</td>
+                    <td th:text="${o.orgPhone}">Phone</td>
+                    <td th:text='${o.orgEmail}'>Email </td>
+                    <td th:text='${o.location.city}'> City</td>
+                    <td th:text='${o.location.state}'> State </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- End main body -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>;
